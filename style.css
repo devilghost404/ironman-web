@@ -1,0 +1,200 @@
+*{
+  padding: 0;
+  margin: 0;
+  /* background-color: darkgray; */
+}
+
+.navbar{
+  background-color: #2d2d2d;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+.navbar img{
+  height: 10%;
+  width: min(100px, 10vw);
+  margin: 5px;
+  margin-left: min(20px, 3vw);
+ 
+}
+.searchbar{
+  height: min(30px, 6vw);
+  width: min(350px, 30vw);
+  border-radius: 10px;
+  margin: 10px;
+  margin-right: min(40px, 3vw);
+}
+
+.menu li a{
+  color: white;
+  margin: min(10px, 1vw);
+  font-size: min(20px, 3vw);
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #2d2d2d;
+  text-decoration: none;
+  
+}
+.navbar ul{
+  background-color: #2d2d2d;
+  display: flex;
+}
+.navbar ul li{
+  display: flex;
+  flex-direction: row;
+  background-color: #2d2d2d;
+}
+
+.banner{
+  background-image: url('images/ironman-banner.jpg');
+  background-position: center;
+  height: 70vh;
+  background-repeat: no-repeat;
+  margin-top: 30px;
+  background-size: cover;
+  margin: 20px 20px;
+}
+
+@media (max-width: 1980px){
+  .banner{
+    border-radius: 60px;
+  }
+}
+
+@media (max-width: 600px){
+  .banner{
+    background-size: 500px;
+    height: 250px;
+    margin: 10px;
+    margin-top: 20px;
+    border-radius: 30px;
+
+  }
+}
+
+.banner-content h1{
+  font-size: 70px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 50px;
+}
+.banner-content p{
+  font-size: 35px;
+  width: 700px;
+}
+.banner .banner-content{
+  color: white;
+  padding-left: 30px;
+  padding-top: 100px;
+  
+}
+.read-btn{
+  height: 60px;
+  width: 220px;
+  background-color: limegreen;
+  border: 5px white;
+  border-radius: 40px;
+  margin: 50px;
+  margin-top: 120px;
+  font-size: 30px;
+  
+}
+@media (max-width: 600px){
+  .banner-content h1{
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 600px){
+  .banner-content p{
+    font-size: 14px;
+    width: 250px;
+  }
+}
+@media (max-width: 600px){
+  .banner .banner-content {
+   padding-top: 20px;
+  }
+}
+@media (max-width: 600px){
+  .read-btn{
+    height: 25px;
+  width: 80px;
+  background-color: limegreen;
+  border: 5px white;
+  border-radius: 20px;
+  margin: 10px;
+  margin-top: 20px;
+  font-size: 14px;
+  }
+}
+h2{
+  font-size: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+@media (max-width: 600px){
+  h2{
+    font-size: 20px;
+    margin-left: 15px;
+  }
+}
+.movie{
+  border: 3px solid black;
+  height: 520px;
+  width: 275px;
+  border-radius: 20px;
+  margin: 0px;
+  background-color: black;
+  color: white;
+  
+}
+.movie img{
+  height: 400px;
+  width: 275px;
+  border-radius: 18px;
+}
+.movie h3{
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.movie p{
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 5px;
+}
+.read{
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  background-color: limegreen;
+  font-size: 16px;
+  margin: 5px;
+  margin-top: 0px;
+}
+.movie-section{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.footer{
+  background: #687ac9;
+  color: #fff;
+}
+.footer-bottom{
+  text-align: center;
+  padding: 15px 0;
+  background: #111;
+  margin-top: 20px;
+  font-size: 20px;
+  font-family: Arial,sans-serif;
+}
+@media (max-width:600px){
+  .footer-bottom{
+    font-size: 14px;
+  }
+}
