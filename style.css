@@ -1,200 +1,204 @@
-*{
-  padding: 0;
-  margin: 0;
-  /* background-color: darkgray; */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    outline: none;
+}
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+/* navbar design css */
+.navbar {
+    width: 100%;
+    height: 4rem;
+    background-color: #2d2d2d;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+.navbar img {
+    position: relative;
+    height: 70%;
+}
+.nav-icon {
+    display: none;
+}
+.navbar .menu {
+    background: #2d2d2d;
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+.menu li a {
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+.searchbar {
+    font-size: 1.05rem;
+    border: none;
+    border-radius: 6px;
+    padding: 0.3rem 0.6rem;
+}
+/* header banner css */
+main {
+    padding: 2rem;
+    margin-top: 2rem;
+}
+.banner {
+    border-radius: 12px;
+    background: url("images/ironman-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vh - 9rem);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0 2rem;
+}
+.banner p {
+    width: 80%;
+    text-shadow: 0 0 4px #000;
+}
+.banner button {
+    background: lime;
+    border: none;
+    width: 140px;
+    height: 35px;
+    border-radius: 1rem;
+    color: white;
+    text-shadow: 0 0 4px #000;
+    border: 1px solid white;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.banner button:active {
+    transform: scale(0.95);
+}
+/* movies section css */
+main h2 {
+    margin: 2rem 0;
+}
+main .movie-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    gap: 1rem;
+}
+.movie-section .movie {
+    position: relative;
+    width: min(280px, 100%);
+    height: 350px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.movie-section .movie img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.movie .info {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(100%);
+    background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.3));
+    backdrop-filter: blur(8px);
+    color: white;
+    padding: 10px;
+    transition: transform 0.3s ease-in;
+}
+.movie:active .info,
+.movie:hover .info{
+    transform: translateY(0);
+}
+.movie .info h3 {
+    text-align: center;
+    margin-bottom: 5px;
+}
+.movie .info p {
+    text-align: justify;
+}
+.movie .info button {
+    background: lime;
+    width: 100%;
+    margin-top: 8px;
+    height: 35px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
-.navbar{
-  background-color: #2d2d2d;
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: space-between;
-  
+/* footer css*/
+.footer {
+    background: #000;
+    color: white;
+    text-align: center;
+    padding: 1rem;
 }
-.navbar img{
-  height: 10%;
-  width: min(100px, 10vw);
-  margin: 5px;
-  margin-left: min(20px, 3vw);
- 
+/* responsive ness */
+@media screen and (min-width: 1200px) {
+    main .movie-section {
+        grid-template-columns: repeat(5, 1fr);
+    }
 }
-.searchbar{
-  height: min(30px, 6vw);
-  width: min(350px, 30vw);
-  border-radius: 10px;
-  margin: 10px;
-  margin-right: min(40px, 3vw);
+@media screen and (max-width: 1200px) {
+    main .movie-section {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
-
-.menu li a{
-  color: white;
-  margin: min(10px, 1vw);
-  font-size: min(20px, 3vw);
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #2d2d2d;
-  text-decoration: none;
-  
-}
-.navbar ul{
-  background-color: #2d2d2d;
-  display: flex;
-}
-.navbar ul li{
-  display: flex;
-  flex-direction: row;
-  background-color: #2d2d2d;
+@media screen and (max-width: 950px) {
+    main .movie-section {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
-.banner{
-  background-image: url('images/ironman-banner.jpg');
-  background-position: center;
-  height: 70vh;
-  background-repeat: no-repeat;
-  margin-top: 30px;
-  background-size: cover;
-  margin: 20px 20px;
+@media screen and (max-width: 768px) {
+    .nav-icon {
+        display: block;
+        color: white;
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+    .searchbar {
+        position: absolute;
+        top: 5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.3);
+        width: 85%;
+    }
+    .navbar .menu {
+        position: absolute;
+        top: 4rem;
+        right: 0;
+        transform: translateX(100%);
+        flex-direction: column;
+        z-index: 10;
+        width: 250px;
+        height: calc(100vh - 4rem);
+        background: #353535;
+        padding: 2rem 1rem;
+        transition: transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    .navbar .menu.active {
+        transform: translateX(0%);
+    }
+    .banner {
+        background-position: 75%;
+    }
+    main .movie-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
-
-@media (max-width: 1980px){
-  .banner{
-    border-radius: 60px;
-  }
-}
-
-@media (max-width: 600px){
-  .banner{
-    background-size: 500px;
-    height: 250px;
-    margin: 10px;
-    margin-top: 20px;
-    border-radius: 30px;
-
-  }
-}
-
-.banner-content h1{
-  font-size: 70px;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-bottom: 50px;
-}
-.banner-content p{
-  font-size: 35px;
-  width: 700px;
-}
-.banner .banner-content{
-  color: white;
-  padding-left: 30px;
-  padding-top: 100px;
-  
-}
-.read-btn{
-  height: 60px;
-  width: 220px;
-  background-color: limegreen;
-  border: 5px white;
-  border-radius: 40px;
-  margin: 50px;
-  margin-top: 120px;
-  font-size: 30px;
-  
-}
-@media (max-width: 600px){
-  .banner-content h1{
-    font-size: 30px;
-    margin-bottom: 20px;
-  }
-}
-@media (max-width: 600px){
-  .banner-content p{
-    font-size: 14px;
-    width: 250px;
-  }
-}
-@media (max-width: 600px){
-  .banner .banner-content {
-   padding-top: 20px;
-  }
-}
-@media (max-width: 600px){
-  .read-btn{
-    height: 25px;
-  width: 80px;
-  background-color: limegreen;
-  border: 5px white;
-  border-radius: 20px;
-  margin: 10px;
-  margin-top: 20px;
-  font-size: 14px;
-  }
-}
-h2{
-  font-size: 40px;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-left: 20px;
-  margin-bottom: 10px;
-}
-@media (max-width: 600px){
-  h2{
-    font-size: 20px;
-    margin-left: 15px;
-  }
-}
-.movie{
-  border: 3px solid black;
-  height: 520px;
-  width: 275px;
-  border-radius: 20px;
-  margin: 0px;
-  background-color: black;
-  color: white;
-  
-}
-.movie img{
-  height: 400px;
-  width: 275px;
-  border-radius: 18px;
-}
-.movie h3{
-  font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-left: 10px;
-  margin-top: 10px;
-}
-.movie p{
-  font-size: 16px;
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 5px;
-}
-.read{
-  height: 30px;
-  width: 30px;
-  border-radius: 15px;
-  background-color: limegreen;
-  font-size: 16px;
-  margin: 5px;
-  margin-top: 0px;
-}
-.movie-section{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-}
-.footer{
-  background: #687ac9;
-  color: #fff;
-}
-.footer-bottom{
-  text-align: center;
-  padding: 15px 0;
-  background: #111;
-  margin-top: 20px;
-  font-size: 20px;
-  font-family: Arial,sans-serif;
-}
-@media (max-width:600px){
-  .footer-bottom{
-    font-size: 14px;
-  }
+@media screen and (max-width: 480px) {
+    main .movie-section {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
